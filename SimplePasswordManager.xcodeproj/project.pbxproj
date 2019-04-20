@@ -14,6 +14,7 @@
 		8D145F1F226B743300659681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D145F1D226B743300659681 /* LaunchScreen.storyboard */; };
 		8D145F2A226B743300659681 /* SimplePasswordManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D145F29226B743300659681 /* SimplePasswordManagerTests.swift */; };
 		8D145F35226B743300659681 /* SimplePasswordManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D145F34226B743300659681 /* SimplePasswordManagerUITests.swift */; };
+		8D145F43226B785B00659681 /* PasswordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D145F42226B785B00659681 /* PasswordListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		8D145F30226B743300659681 /* SimplePasswordManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimplePasswordManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D145F34226B743300659681 /* SimplePasswordManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePasswordManagerUITests.swift; sourceTree = "<group>"; };
 		8D145F36226B743300659681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D145F42226B785B00659681 /* PasswordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				8D145F14226B743200659681 /* AppDelegate.swift */,
 				8D145F16226B743200659681 /* ViewController.swift */,
+				8D145F42226B785B00659681 /* PasswordListViewController.swift */,
 				8D145F18226B743200659681 /* Main.storyboard */,
 				8D145F1B226B743300659681 /* Assets.xcassets */,
 				8D145F1D226B743300659681 /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D145F43226B785B00659681 /* PasswordListViewController.swift in Sources */,
 				8D145F17226B743200659681 /* ViewController.swift in Sources */,
 				8D145F15226B743200659681 /* AppDelegate.swift in Sources */,
 			);
