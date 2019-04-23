@@ -11,6 +11,9 @@ class PasswordListViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+        
+        let rightNavBtn =  UIBarButtonItem(barButtonSystemItem:  .add, target: self, action: #selector(rightBarBtnClicked))
+        navigationItem.rightBarButtonItem = rightNavBtn
 
         items = ["Apple", "Water melon", "Peach", "Cherry", "Grapes", "pear"]
 
@@ -27,8 +30,13 @@ class PasswordListViewController: UIViewController {
         // set tableview
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
         view.addSubview(tableView)
+        
+        
     }
 
+    @objc func rightBarBtnClicked(sender: UIButton){
+        print("rightBarBtnClicked")
+    }
 
 
 }

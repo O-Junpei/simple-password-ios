@@ -9,7 +9,6 @@ class GoogleLoginViewController: UIViewController {
         
         view.backgroundColor = .orange
 
-        
         // ログアウトボタン
         googleLoginButton = UIButton()
         googleLoginButton.frame = CGRect(x: 100, y: 350, width: 200, height: 40)
