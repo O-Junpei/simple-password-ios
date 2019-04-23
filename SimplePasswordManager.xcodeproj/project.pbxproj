@@ -10,14 +10,14 @@
 		0D0836439C40BA2D3DBEB6F5 /* Pods_SimplePasswordManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B7D671B4515C882687B2A7 /* Pods_SimplePasswordManager.framework */; };
 		380DA0096940BE95E3D95008 /* Pods_SimplePasswordManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0E803AFCE5B2AAB4ECDE0B /* Pods_SimplePasswordManagerTests.framework */; };
 		8D145F15226B743200659681 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D145F14226B743200659681 /* AppDelegate.swift */; };
-		8D145F17226B743200659681 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D145F16226B743200659681 /* ViewController.swift */; };
-		8D145F1A226B743200659681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D145F18226B743200659681 /* Main.storyboard */; };
+		8D145F17226B743200659681 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D145F16226B743200659681 /* TopViewController.swift */; };
 		8D145F1C226B743300659681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D145F1B226B743300659681 /* Assets.xcassets */; };
 		8D145F1F226B743300659681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D145F1D226B743300659681 /* LaunchScreen.storyboard */; };
 		8D145F2A226B743300659681 /* SimplePasswordManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D145F29226B743300659681 /* SimplePasswordManagerTests.swift */; };
 		8D145F35226B743300659681 /* SimplePasswordManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D145F34226B743300659681 /* SimplePasswordManagerUITests.swift */; };
 		8D145F43226B785B00659681 /* PasswordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D145F42226B785B00659681 /* PasswordListViewController.swift */; };
 		8D145F4B226B7BB400659681 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D145F4A226B7BB400659681 /* GoogleService-Info.plist */; };
+		8DD5F93B226F70910023305E /* GoogleLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5F93A226F70910023305E /* GoogleLoginViewController.swift */; };
 		BA6BD87813F44282EB31C584 /* Pods_SimplePasswordManagerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3410D8E0E958D43427C9350E /* Pods_SimplePasswordManagerUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,8 +46,7 @@
 		810A3F52D42844DE8D303A81 /* Pods-SimplePasswordManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplePasswordManager.debug.xcconfig"; path = "Target Support Files/Pods-SimplePasswordManager/Pods-SimplePasswordManager.debug.xcconfig"; sourceTree = "<group>"; };
 		8D145F11226B743200659681 /* SimplePasswordManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplePasswordManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D145F14226B743200659681 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8D145F16226B743200659681 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8D145F19226B743200659681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8D145F16226B743200659681 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		8D145F1B226B743300659681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D145F1E226B743300659681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D145F20226B743300659681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		8D145F36226B743300659681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D145F42226B785B00659681 /* PasswordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordListViewController.swift; sourceTree = "<group>"; };
 		8D145F4A226B7BB400659681 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8DD5F93A226F70910023305E /* GoogleLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginViewController.swift; sourceTree = "<group>"; };
 		B5A5A5AE9577366D5657D7EC /* Pods-SimplePasswordManagerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplePasswordManagerUITests.release.xcconfig"; path = "Target Support Files/Pods-SimplePasswordManagerUITests/Pods-SimplePasswordManagerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C7C5B1A58EA83A32A030201F /* Pods-SimplePasswordManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplePasswordManagerTests.debug.xcconfig"; path = "Target Support Files/Pods-SimplePasswordManagerTests/Pods-SimplePasswordManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E3738D49B1834771B1074364 /* Pods-SimplePasswordManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplePasswordManager.release.xcconfig"; path = "Target Support Files/Pods-SimplePasswordManager/Pods-SimplePasswordManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,9 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				8D145F14226B743200659681 /* AppDelegate.swift */,
-				8D145F16226B743200659681 /* ViewController.swift */,
+				8DD5F939226F6EDA0023305E /* Model */,
+				8D145F16226B743200659681 /* TopViewController.swift */,
 				8D145F42226B785B00659681 /* PasswordListViewController.swift */,
-				8D145F18226B743200659681 /* Main.storyboard */,
+				8DD5F93A226F70910023305E /* GoogleLoginViewController.swift */,
 				8D145F1B226B743300659681 /* Assets.xcassets */,
 				8D145F1D226B743300659681 /* LaunchScreen.storyboard */,
 				8D145F20226B743300659681 /* Info.plist */,
@@ -159,6 +160,13 @@
 				8D145F36226B743300659681 /* Info.plist */,
 			);
 			path = SimplePasswordManagerUITests;
+			sourceTree = "<group>";
+		};
+		8DD5F939226F6EDA0023305E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		ED4D23E62978FF51B783E082 /* Frameworks */ = {
@@ -282,7 +290,6 @@
 				8D145F1F226B743300659681 /* LaunchScreen.storyboard in Resources */,
 				8D145F1C226B743300659681 /* Assets.xcassets in Resources */,
 				8D145F4B226B7BB400659681 /* GoogleService-Info.plist in Resources */,
-				8D145F1A226B743200659681 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,8 +408,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D145F43226B785B00659681 /* PasswordListViewController.swift in Sources */,
-				8D145F17226B743200659681 /* ViewController.swift in Sources */,
+				8D145F17226B743200659681 /* TopViewController.swift in Sources */,
 				8D145F15226B743200659681 /* AppDelegate.swift in Sources */,
+				8DD5F93B226F70910023305E /* GoogleLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,14 +446,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8D145F18226B743200659681 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8D145F19226B743200659681 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8D145F1D226B743300659681 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
