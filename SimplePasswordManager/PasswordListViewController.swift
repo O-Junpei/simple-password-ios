@@ -30,8 +30,6 @@ class PasswordListViewController: UIViewController {
         tableView.rowHeight = 80
         
         view.addSubview(tableView)
-        
-        
     }
 
     @objc func rightBarBtnClicked(sender: UIButton){

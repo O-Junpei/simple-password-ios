@@ -44,8 +44,14 @@ class TopViewController: UIViewController {
 
     @objc func loginButtonOnTap(){
         print("loginButtonOnTap")
+        
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.fade
+        navigationController?.view.layer.add(transition, forKey: nil)
         let passwordListViewController = PasswordListViewController()
-        navigationController?.pushViewController(passwordListViewController, animated: true)
+        navigationController?.setViewControllers([passwordListViewController], animated: false)
     }
     
     
