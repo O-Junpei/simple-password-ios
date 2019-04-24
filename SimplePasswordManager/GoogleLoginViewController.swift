@@ -6,6 +6,7 @@ import GoogleSignIn
 class GoogleLoginViewController: UIViewController, GIDSignInUIDelegate {
 
     private var googleLoginButton: UIButton!
+    private var handle: AuthStateDidChangeListenerHandle!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,23 +23,43 @@ class GoogleLoginViewController: UIViewController, GIDSignInUIDelegate {
         view.addSubview(googleLoginButton)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                // User is signed in
+                self.goTopViewController()
+            } else {
+                // User is not signed in
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+       super.viewWillDisappear(animated)
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
 
     @objc func googleLoginButtonOnTap(){
         print("googleLoginButtonOnTap")
         
         if Auth.auth().currentUser != nil {
             // User is signed in
-            // でぃそ
-            let topViewController = TopViewController()
-            let transition = CATransition()
-            transition.duration = 0.5
-            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-            transition.type = CATransitionType.fade
-            navigationController?.view.layer.add(transition, forKey: nil)
-            navigationController?.setViewControllers([topViewController], animated: false)
+            self.goTopViewController()
         } else {
+            // User is not signed in
             GIDSignIn.sharedInstance().uiDelegate = self
             GIDSignIn.sharedInstance().signIn()
         }
+    }
+    
+    func goTopViewController() {
+        let topViewController = TopViewController()
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.fade
+        navigationController?.view.layer.add(transition, forKey: nil)
+        navigationController?.setViewControllers([topViewController], animated: false)
     }
 }
