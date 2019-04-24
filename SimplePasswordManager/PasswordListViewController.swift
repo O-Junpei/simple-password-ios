@@ -36,6 +36,8 @@ class PasswordListViewController: UIViewController {
 
     @objc func rightBarBtnClicked(sender: UIButton){
         print("rightBarBtnClicked")
+        let navigationController = UINavigationController(rootViewController: AddPasswordViewController())
+        present(navigationController, animated: true)
     }
 
 
@@ -56,5 +58,6 @@ extension PasswordListViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("\(indexPath.row) cell was selected")
+        navigationController?.pushViewController(PasswordDetailViewController(), animated: true)
     }
 }
