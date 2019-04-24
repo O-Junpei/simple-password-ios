@@ -7,7 +7,9 @@ target 'SimplePasswordManager' do
 
   # Pods for SimplePasswordManager
   pod 'Firebase/Core'
-
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
   target 'SimplePasswordManagerTests' do
     inherit! :search_paths

@@ -10,6 +10,10 @@
 		0D0836439C40BA2D3DBEB6F5 /* Pods_SimplePasswordManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B7D671B4515C882687B2A7 /* Pods_SimplePasswordManager.framework */; };
 		171105E022700F3900B1151D /* PasswordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171105DF22700F3900B1151D /* PasswordDetailViewController.swift */; };
 		171105E22270100F00B1151D /* CustumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171105E12270100F00B1151D /* CustumTableViewCell.swift */; };
+		17818C5D227075DD006CD16C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17818C5C227075DD006CD16C /* User.swift */; };
+		17818C5F2270773D006CD16C /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17818C5E2270773D006CD16C /* Password.swift */; };
+		17818C622270778F006CD16C /* UserHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17818C612270778F006CD16C /* UserHandler.swift */; };
+		17818C64227077C7006CD16C /* PasswordHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17818C63227077C7006CD16C /* PasswordHandler.swift */; };
 		380DA0096940BE95E3D95008 /* Pods_SimplePasswordManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0E803AFCE5B2AAB4ECDE0B /* Pods_SimplePasswordManagerTests.framework */; };
 		8D145F15226B743200659681 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D145F14226B743200659681 /* AppDelegate.swift */; };
 		8D145F17226B743200659681 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D145F16226B743200659681 /* TopViewController.swift */; };
@@ -44,6 +48,10 @@
 /* Begin PBXFileReference section */
 		171105DF22700F3900B1151D /* PasswordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDetailViewController.swift; sourceTree = "<group>"; };
 		171105E12270100F00B1151D /* CustumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustumTableViewCell.swift; sourceTree = "<group>"; };
+		17818C5C227075DD006CD16C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		17818C5E2270773D006CD16C /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
+		17818C612270778F006CD16C /* UserHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHandler.swift; sourceTree = "<group>"; };
+		17818C63227077C7006CD16C /* PasswordHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordHandler.swift; sourceTree = "<group>"; };
 		1C0E803AFCE5B2AAB4ECDE0B /* Pods_SimplePasswordManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimplePasswordManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		222D99089B40570BF960710E /* Pods-SimplePasswordManagerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplePasswordManagerUITests.debug.xcconfig"; path = "Target Support Files/Pods-SimplePasswordManagerUITests/Pods-SimplePasswordManagerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3410D8E0E958D43427C9350E /* Pods_SimplePasswordManagerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimplePasswordManagerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17818C6022707750006CD16C /* ModelHandler */ = {
+			isa = PBXGroup;
+			children = (
+				17818C612270778F006CD16C /* UserHandler.swift */,
+				17818C63227077C7006CD16C /* PasswordHandler.swift */,
+			);
+			path = ModelHandler;
+			sourceTree = "<group>";
+		};
 		1ED5E6889ED3D7684BB7F6EE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +156,7 @@
 			children = (
 				8D145F14226B743200659681 /* AppDelegate.swift */,
 				8DD5F939226F6EDA0023305E /* Model */,
+				17818C6022707750006CD16C /* ModelHandler */,
 				8DD5F93A226F70910023305E /* GoogleLoginViewController.swift */,
 				8D145F16226B743200659681 /* TopViewController.swift */,
 				8D145F42226B785B00659681 /* PasswordListViewController.swift */,
@@ -174,6 +192,8 @@
 		8DD5F939226F6EDA0023305E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				17818C5C227075DD006CD16C /* User.swift */,
+				17818C5E2270773D006CD16C /* Password.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,6 +220,7 @@
 				8D145F0E226B743200659681 /* Frameworks */,
 				8D145F0F226B743200659681 /* Resources */,
 				728723022A08BDC3577849C2 /* [CP] Embed Pods Frameworks */,
+				FA14DF24F19E3C87BADC78D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -372,14 +393,28 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SimplePasswordManager/Pods-SimplePasswordManager-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +444,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FA14DF24F19E3C87BADC78D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimplePasswordManager/Pods-SimplePasswordManager-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimplePasswordManager/Pods-SimplePasswordManager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -416,11 +473,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17818C5F2270773D006CD16C /* Password.swift in Sources */,
 				8D145F43226B785B00659681 /* PasswordListViewController.swift in Sources */,
 				8DD5F93D226F7AE00023305E /* AddPasswordViewController.swift in Sources */,
 				171105E22270100F00B1151D /* CustumTableViewCell.swift in Sources */,
+				17818C64227077C7006CD16C /* PasswordHandler.swift in Sources */,
 				171105E022700F3900B1151D /* PasswordDetailViewController.swift in Sources */,
+				17818C5D227075DD006CD16C /* User.swift in Sources */,
 				8D145F17226B743200659681 /* TopViewController.swift in Sources */,
+				17818C622270778F006CD16C /* UserHandler.swift in Sources */,
 				8D145F15226B743200659681 /* AppDelegate.swift in Sources */,
 				8DD5F93B226F70910023305E /* GoogleLoginViewController.swift in Sources */,
 			);

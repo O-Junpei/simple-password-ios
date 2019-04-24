@@ -1,4 +1,6 @@
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class TopViewController: UIViewController {
     
@@ -50,15 +52,20 @@ class TopViewController: UIViewController {
     @objc func googleLogoutButtonOnTap(){
         print("googleLogoutButton")
 
-        let googleLoginViewController = GoogleLoginViewController()
-        
-        // Fade Animation
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        transition.type = CATransitionType.fade
-        navigationController?.view.layer.add(transition, forKey: nil)
-        navigationController?.setViewControllers([googleLoginViewController], animated: false)
+        do {
+            try Auth.auth().signOut()
+            
+            // Fade Animation
+            let transition = CATransition()
+            transition.duration = 0.5
+            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+            transition.type = CATransitionType.fade
+            navigationController?.view.layer.add(transition, forKey: nil)
+            let googleLoginViewController = GoogleLoginViewController()
+            navigationController?.setViewControllers([googleLoginViewController], animated: false)
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
 }
 

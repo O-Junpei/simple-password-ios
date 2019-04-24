@@ -1,6 +1,9 @@
 import UIKit
+import Firebase
+import FirebaseAuth
+import GoogleSignIn
 
-class GoogleLoginViewController: UIViewController {
+class GoogleLoginViewController: UIViewController, GIDSignInUIDelegate {
 
     private var googleLoginButton: UIButton!
     
@@ -23,15 +26,19 @@ class GoogleLoginViewController: UIViewController {
     @objc func googleLoginButtonOnTap(){
         print("googleLoginButtonOnTap")
         
-        // でぃそ
-        let topViewController = TopViewController()
-        
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        transition.type = CATransitionType.fade
-        navigationController?.view.layer.add(transition, forKey: nil)
-        navigationController?.setViewControllers([topViewController], animated: false)
+        if Auth.auth().currentUser != nil {
+            // User is signed in
+            // でぃそ
+            let topViewController = TopViewController()
+            let transition = CATransition()
+            transition.duration = 0.5
+            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+            transition.type = CATransitionType.fade
+            navigationController?.view.layer.add(transition, forKey: nil)
+            navigationController?.setViewControllers([topViewController], animated: false)
+        } else {
+            GIDSignIn.sharedInstance().uiDelegate = self
+            GIDSignIn.sharedInstance().signIn()
+        }
     }
-
 }
