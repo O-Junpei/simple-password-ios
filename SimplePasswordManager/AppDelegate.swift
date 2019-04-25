@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.makeKeyAndVisible()
         
+        
+        
+        
         if Auth.auth().currentUser != nil {
             // User is signed in
             let viewController = TopViewController()

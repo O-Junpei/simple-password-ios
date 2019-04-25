@@ -60,7 +60,8 @@ class TopViewController: UIViewController {
 
         do {
             try Auth.auth().signOut()
-
+           
+            // Fade Animation
             let transition = CATransition()
             transition.duration = 0.5
             transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
