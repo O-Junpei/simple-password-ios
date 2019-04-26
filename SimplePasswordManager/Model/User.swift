@@ -2,42 +2,35 @@ import UIKit
 import Firebase
 
 class User {
+    static let uid = "uid"
+    static let encryptedUid = "encrypted_uid"
+
+    
     static let name = "user"
     static let password = "password"
 
     static let defaultNickname = "ななしさん"
-    static let uid = "uid"
     static let nickname = "nickname"
     static let profile = "profile"
     static let createdAt = "created_at"
     
-    var uid: String
-    var password: String!
+    var uid: String!
+    var encryptedUid: String?
 
-    var nickname: String
-    var profile: String
+    var nickname: String!
+    var profile: String!
     
     init(uid: String, document: DocumentSnapshot) {
         self.uid = uid
-        
-        if let name = document.get(User.nickname) as? String {
-            self.nickname = name
-        } else {
-            self.nickname = User.defaultNickname
-        }
-        
-        if let profile = document.get(User.profile) as? String {
-            self.profile = profile
-        } else {
-            self.profile = ""
+        if let encryptedUid = document.get(User.encryptedUid) as? String {
+            self.encryptedUid = encryptedUid
         }
     }
     
-//    init(uid: String) {
-//        self.uid = uid
-//        self.nickname = User.defaultNickname
-//        self.profile = ""
-//    }
+    init(uid: String, password: String) {
+        self.uid = uid
+        self.encryptedUid = password
+    }
     
 //    static func getIconReference(uid: String) -> StorageReference {
 //        let storage = Storage.storage()

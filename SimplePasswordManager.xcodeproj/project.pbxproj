@@ -14,6 +14,9 @@
 		17818C5F2270773D006CD16C /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17818C5E2270773D006CD16C /* Password.swift */; };
 		17818C622270778F006CD16C /* UserHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17818C612270778F006CD16C /* UserHandler.swift */; };
 		17818C64227077C7006CD16C /* PasswordHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17818C63227077C7006CD16C /* PasswordHandler.swift */; };
+		17818C662271C4E5006CD16C /* RouterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17818C652271C4E5006CD16C /* RouterViewController.swift */; };
+		17818C682271C83F006CD16C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17818C672271C83F006CD16C /* SignUpViewController.swift */; };
+		17818C6B2271CC3F006CD16C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17818C6A2271CC3F006CD16C /* ViewController.swift */; };
 		380DA0096940BE95E3D95008 /* Pods_SimplePasswordManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0E803AFCE5B2AAB4ECDE0B /* Pods_SimplePasswordManagerTests.framework */; };
 		8D145F15226B743200659681 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D145F14226B743200659681 /* AppDelegate.swift */; };
 		8D145F17226B743200659681 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D145F16226B743200659681 /* TopViewController.swift */; };
@@ -52,6 +55,9 @@
 		17818C5E2270773D006CD16C /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 		17818C612270778F006CD16C /* UserHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHandler.swift; sourceTree = "<group>"; };
 		17818C63227077C7006CD16C /* PasswordHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordHandler.swift; sourceTree = "<group>"; };
+		17818C652271C4E5006CD16C /* RouterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterViewController.swift; sourceTree = "<group>"; };
+		17818C672271C83F006CD16C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		17818C6A2271CC3F006CD16C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1C0E803AFCE5B2AAB4ECDE0B /* Pods_SimplePasswordManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimplePasswordManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		222D99089B40570BF960710E /* Pods-SimplePasswordManagerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplePasswordManagerUITests.debug.xcconfig"; path = "Target Support Files/Pods-SimplePasswordManagerUITests/Pods-SimplePasswordManagerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3410D8E0E958D43427C9350E /* Pods_SimplePasswordManagerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimplePasswordManagerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +122,14 @@
 			path = ModelHandler;
 			sourceTree = "<group>";
 		};
+		17818C692271CC1D006CD16C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				17818C6A2271CC3F006CD16C /* ViewController.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		1ED5E6889ED3D7684BB7F6EE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +171,10 @@
 				8D145F14226B743200659681 /* AppDelegate.swift */,
 				8DD5F939226F6EDA0023305E /* Model */,
 				17818C6022707750006CD16C /* ModelHandler */,
+				17818C692271CC1D006CD16C /* Extension */,
+				17818C652271C4E5006CD16C /* RouterViewController.swift */,
 				8DD5F93A226F70910023305E /* GoogleLoginViewController.swift */,
+				17818C672271C83F006CD16C /* SignUpViewController.swift */,
 				8D145F16226B743200659681 /* TopViewController.swift */,
 				8D145F42226B785B00659681 /* PasswordListViewController.swift */,
 				171105DF22700F3900B1151D /* PasswordDetailViewController.swift */,
@@ -477,12 +494,15 @@
 				8D145F43226B785B00659681 /* PasswordListViewController.swift in Sources */,
 				8DD5F93D226F7AE00023305E /* AddPasswordViewController.swift in Sources */,
 				171105E22270100F00B1151D /* CustumTableViewCell.swift in Sources */,
+				17818C6B2271CC3F006CD16C /* ViewController.swift in Sources */,
 				17818C64227077C7006CD16C /* PasswordHandler.swift in Sources */,
+				17818C662271C4E5006CD16C /* RouterViewController.swift in Sources */,
 				171105E022700F3900B1151D /* PasswordDetailViewController.swift in Sources */,
 				17818C5D227075DD006CD16C /* User.swift in Sources */,
 				8D145F17226B743200659681 /* TopViewController.swift in Sources */,
 				17818C622270778F006CD16C /* UserHandler.swift in Sources */,
 				8D145F15226B743200659681 /* AppDelegate.swift in Sources */,
+				17818C682271C83F006CD16C /* SignUpViewController.swift in Sources */,
 				8DD5F93B226F70910023305E /* GoogleLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

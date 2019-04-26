@@ -16,21 +16,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.makeKeyAndVisible()
         
+//        if let user = Auth.auth().currentUser {
+//            // User is signed in
+//
+//            let uid = user.uid
+//
+//
+//            UserHandler.fetchUser(uid: uid) { (user, error) in
+//                if let error = error {
+//                    print(error)
+//                    // GoogleLogin
+//                    let viewController = GoogleLoginViewController()
+//                    let navigationController = UINavigationController(rootViewController: viewController)
+//                    window.rootViewController = navigationController
+//                    self.window = window
+//                    return
+//                }
+//
+//                guard let user = user else {
+//                    // user is nil
+//                    // GoogleLogin
+//                    let viewController = GoogleLoginViewController()
+//                    let navigationController = UINavigationController(rootViewController: viewController)
+//                    window.rootViewController = navigationController
+//                    self.window = window
+//                    return
+//                }
+//
+//                if user.encryptedUid == nil {
+//                    // TopViewController
+//                    let viewController = TopViewController()
+//                    let navigationController = UINavigationController(rootViewController: viewController)
+//                    window.rootViewController = navigationController
+//                    self.window = window
+//                    return
+//                }
+//
+//                // 新規登録
+//
+//
+//            }
         
-        
-        
-        if Auth.auth().currentUser != nil {
-            // User is signed in
-            let viewController = TopViewController()
-            let navigationController = UINavigationController(rootViewController: viewController)
-            window.rootViewController = navigationController
-            self.window = window
-        } else {
-            let viewController = GoogleLoginViewController()
-            let navigationController = UINavigationController(rootViewController: viewController)
-            window.rootViewController = navigationController
-            self.window = window
-        }
+        // Router
+        let router = RouterViewController()
+        let navigationController = UINavigationController(rootViewController: router)
+        window.rootViewController = navigationController
+        self.window = window
         return true
     }
 
@@ -80,5 +111,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print(credential)
         }
     }
+    
+    // GoogleLoginViewController
+    func goGoogleLoginViewController() {
+        
+    }
+    
+    // RegisterView
+    
+    // TopViewController
 }
 
