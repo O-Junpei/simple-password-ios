@@ -4,12 +4,24 @@ import Firebase
 class UserHandler: User {
 
     static func signUpUser(uid: String, password: String, completion: @escaping (NSError?) -> Void) {
+        
+        let str = password + password + password + password + password
+        let key = String(str.prefix(32))
+        
+        let encryptedUid = EncryptionUtil.encrypt(key: "passwordpasswordpasswordpassword", iv: EncryptionUtil.getInitializationVector(), target: uid)
+        
+        if encryptedUid == nil {
+            completion(NSError(domain: "domain", code: 114, userInfo: ["info" : "str"]))
+            return
+        }
+        
+        
         let db = Firestore.firestore()
         let docRef = db.collection("user").document(uid)
         
         let data = [
             "uid": uid,
-            "encrypted_uid": password
+            "encrypted_uid": encryptedUid!
         ]
 
         docRef.setData(data, merge: true, completion: { error in

@@ -16,6 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.makeKeyAndVisible()
         
+        
+        let string = EncryptionUtil.encrypt(key: "passwordpasswordpasswordpassword", iv: "passwordpassword", target: "uQ7qoNAz53aQ0B7vNDHLwtUEpG33")
+        print(string)
+        
+        let string2 = EncryptionUtil.decrypt(key: "passwordpasswordpasswordpassword", iv: "passwordpassword", base64: string!)
+        print(string2)
+
+        
+        
+        
+        
+        
+        
+        
+        
 //        if let user = Auth.auth().currentUser {
 //            // User is signed in
 //

@@ -54,21 +54,12 @@ class TopViewController: UIViewController {
         view.addSubview(googleLogoutButton)
         
         
-        do {
-            let aes = try AES(key: "keykeykeykeykeyk", iv: "drowssapdrowssap") // aes128
-            let ciphertext = try aes.encrypt(Array("Nullam quis risus eget urna mollis ornare vel eu leo.".utf8))
-            print(ciphertext)
-        } catch {
-            
+        
+        UserHandler.signUpUser(uid: uid, password: "passwordpasswordpasswordpassword") { (error) in
+        
+
         }
-        
-        //let string = EncryptionUtil.encrypt(key: "poss", iv: EncryptionUtil.getInitializationVector(), target: uid)
-        
-        
-        UserHandler.signUpUser(uid: uid, password: "poss") { (error) in
-            
-            
-        }
+
     }
 
     @objc func loginButtonOnTap(){
@@ -79,11 +70,32 @@ class TopViewController: UIViewController {
             return
         }
         
-        guard password == encryptedUid else {
-            showMessage(message: "一致しません！！")
-            return
+        UserHandler.fetchUser(uid: uid) { (user, error) in
+            guard let encryptedUid = user?.encryptedUid else {
+                self.showMessage(message: "暗号化されたuid 取得できませんでした")
+                return
+            }
+            
+            let adad = "password"
+            let str = adad + adad + adad + adad + adad
+            let key = String(str.prefix(32))
+            
+            
+            guard let aaaaa = EncryptionUtil.decrypt(key: "passwordpasswordpasswordpassword", iv: "dammy", base64: encryptedUid) else {
+                self.showMessage(message: "複合できませんんで下")
+                return
+            }
+            
+            guard aaaaa == self.uid else {
+                self.showMessage(message: "一致しません！！")
+                return
+            }
+            self.showMessage(message: "一致しまそた！！")
         }
-        showMessage(message: "一致しまそた！！")
+        
+        
+        
+
 
         
 //        let transition = CATransition()

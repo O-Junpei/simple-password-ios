@@ -1,17 +1,21 @@
 import UIKit
 import CryptoSwift
 
+// Reference: https://qiita.com/ochim/items/4690cdc5e7fde9ad1b45
 class EncryptionUtil {
     
     // ----- encryption -----
-    // key:鍵
+    // key:鍵 32 文字
     // iv:初期化ベクトル
     // target:暗号化する文字列
     static func encrypt(key: String, iv: String, target:String) -> String? {
         
         do {
+            // AES-256
             let aes = try AES(key: key, iv: iv)
             let cipherArray = try aes.encrypt(Array(target.utf8))
+            
+            // return cipherArray.toHexString()
             
             // [UInt8]をbase64Stringに変換して返す
             let data = NSData(bytes: cipherArray, length: cipherArray.count)
@@ -30,7 +34,7 @@ class EncryptionUtil {
     static func decrypt(key: String, iv: String, base64:String) -> String? {
         
         do {
-            let aes = try AES(key: key, iv: iv)
+            let aes = try AES(key: key, iv:iv)
             
             // 対象をbase64Decodeしてから、[UInt8]に変換する
             // base64 -> Data
@@ -45,8 +49,9 @@ class EncryptionUtil {
             // aBufferにバイナリデータを格納。
             data.getBytes(&aBuffer, length: data.length)
             
+            
             let decrypted = try aes.decrypt(aBuffer)
-            let string = String(data: Data(bytes: decrypted), encoding: .utf8)
+            let string = String(data: Data(decrypted), encoding: .utf8)
             return string
         } catch {
             return nil
