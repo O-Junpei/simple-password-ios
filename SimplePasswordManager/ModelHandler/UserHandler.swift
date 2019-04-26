@@ -31,7 +31,7 @@ class UserHandler: User {
             }
 
             guard let document = document, document.exists else {
-                completion(nil, nil)
+                completion(User(uid: uid), nil)
                 return
             }
 

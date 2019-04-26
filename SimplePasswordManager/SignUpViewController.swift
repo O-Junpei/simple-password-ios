@@ -79,7 +79,7 @@ class SignUpViewController: UIViewController {
             }
             
             UserHandler.signUpUser(uid: uid, password: password, completion: { (error) in
-                if (error == nil) {
+                if (error != nil) {
                     self.showMessage(message: "登録失敗")
                 }
                 self.showMessage(message: "登録完了！")

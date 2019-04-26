@@ -54,12 +54,12 @@ class GoogleLoginViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     func goTopViewController() {
-        let topViewController = TopViewController()
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        transition.type = CATransitionType.fade
-        navigationController?.view.layer.add(transition, forKey: nil)
-        navigationController?.setViewControllers([topViewController], animated: false)
+//        let topViewController = TopViewController()
+//        let transition = CATransition()
+//        transition.duration = 0.5
+//        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+//        transition.type = CATransitionType.fade
+//        navigationController?.view.layer.add(transition, forKey: nil)
+//        navigationController?.setViewControllers([topViewController], animated: false)
     }
 }

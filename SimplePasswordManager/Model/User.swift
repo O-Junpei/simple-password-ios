@@ -14,22 +14,26 @@ class User {
     static let profile = "profile"
     static let createdAt = "created_at"
     
-    var uid: String!
+    var uid: String
     var encryptedUid: String?
 
     var nickname: String!
     var profile: String!
+    
+    init(uid: String) {
+        self.uid = uid
+    }
+    
+    init(uid: String, password: String) {
+        self.uid = uid
+        self.encryptedUid = password
+    }
     
     init(uid: String, document: DocumentSnapshot) {
         self.uid = uid
         if let encryptedUid = document.get(User.encryptedUid) as? String {
             self.encryptedUid = encryptedUid
         }
-    }
-    
-    init(uid: String, password: String) {
-        self.uid = uid
-        self.encryptedUid = password
     }
     
 //    static func getIconReference(uid: String) -> StorageReference {

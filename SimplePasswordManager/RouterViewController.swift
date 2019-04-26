@@ -27,13 +27,13 @@ class RouterViewController: UIViewController {
                     return
                 }
 
-                if user.encryptedUid == nil {
+                guard let encryptedUid = user.encryptedUid else {
                     // sign up
                     self.goSignUpViewController()
                     return
                 }
 
-                self.goTopViewController()
+                self.goTopViewController(uid: user.uid, encryptedUid: encryptedUid)
             }
         }
     }
@@ -61,8 +61,8 @@ class RouterViewController: UIViewController {
     }
     
     // TopViewController
-    func goTopViewController() {
-        let topViewController = TopViewController()
+    func goTopViewController(uid: String, encryptedUid: String) {
+        let topViewController = TopViewController(uid: uid, encryptedUid: encryptedUid)
         let transition = CATransition()
         transition.duration = 0.5
         transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)

@@ -10,6 +10,7 @@
 		0D0836439C40BA2D3DBEB6F5 /* Pods_SimplePasswordManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B7D671B4515C882687B2A7 /* Pods_SimplePasswordManager.framework */; };
 		171105E022700F3900B1151D /* PasswordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171105DF22700F3900B1151D /* PasswordDetailViewController.swift */; };
 		171105E22270100F00B1151D /* CustumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171105E12270100F00B1151D /* CustumTableViewCell.swift */; };
+		1753C1EA2272B84200B4FFAB /* EncryptionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1753C1E92272B84200B4FFAB /* EncryptionUtil.swift */; };
 		17818C5D227075DD006CD16C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17818C5C227075DD006CD16C /* User.swift */; };
 		17818C5F2270773D006CD16C /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17818C5E2270773D006CD16C /* Password.swift */; };
 		17818C622270778F006CD16C /* UserHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17818C612270778F006CD16C /* UserHandler.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		171105DF22700F3900B1151D /* PasswordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDetailViewController.swift; sourceTree = "<group>"; };
 		171105E12270100F00B1151D /* CustumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustumTableViewCell.swift; sourceTree = "<group>"; };
+		1753C1E92272B84200B4FFAB /* EncryptionUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionUtil.swift; sourceTree = "<group>"; };
 		17818C5C227075DD006CD16C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		17818C5E2270773D006CD16C /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 		17818C612270778F006CD16C /* UserHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHandler.swift; sourceTree = "<group>"; };
@@ -113,6 +115,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1753C1E82272B82900B4FFAB /* Encrypt */ = {
+			isa = PBXGroup;
+			children = (
+				1753C1E92272B84200B4FFAB /* EncryptionUtil.swift */,
+			);
+			path = Encrypt;
+			sourceTree = "<group>";
+		};
 		17818C6022707750006CD16C /* ModelHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +181,7 @@
 				8D145F14226B743200659681 /* AppDelegate.swift */,
 				8DD5F939226F6EDA0023305E /* Model */,
 				17818C6022707750006CD16C /* ModelHandler */,
+				1753C1E82272B82900B4FFAB /* Encrypt */,
 				17818C692271CC1D006CD16C /* Extension */,
 				17818C652271C4E5006CD16C /* RouterViewController.swift */,
 				8DD5F93A226F70910023305E /* GoogleLoginViewController.swift */,
@@ -411,6 +422,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SimplePasswordManager/Pods-SimplePasswordManager-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -425,6 +437,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -504,6 +517,7 @@
 				8D145F15226B743200659681 /* AppDelegate.swift in Sources */,
 				17818C682271C83F006CD16C /* SignUpViewController.swift in Sources */,
 				8DD5F93B226F70910023305E /* GoogleLoginViewController.swift in Sources */,
+				1753C1EA2272B84200B4FFAB /* EncryptionUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
