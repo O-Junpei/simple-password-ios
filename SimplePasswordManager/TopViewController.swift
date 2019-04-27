@@ -81,7 +81,7 @@ class TopViewController: UIViewController {
             let key = String(str.prefix(32))
             
             
-            guard let aaaaa = EncryptionUtil.decrypt(key: "passwordpasswordpasswordpassword", iv: "dammy", base64: encryptedUid) else {
+            guard let aaaaa = EncryptionUtil.decrypt(key: "passwordpasswordpasswordpassword", iv: "passwordpassword", base64: encryptedUid) else {
                 self.showMessage(message: "複合できませんんで下")
                 return
             }

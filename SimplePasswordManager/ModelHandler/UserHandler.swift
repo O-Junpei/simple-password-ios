@@ -8,7 +8,7 @@ class UserHandler: User {
         let str = password + password + password + password + password
         let key = String(str.prefix(32))
         
-        let encryptedUid = EncryptionUtil.encrypt(key: "passwordpasswordpasswordpassword", iv: EncryptionUtil.getInitializationVector(), target: uid)
+        let encryptedUid = EncryptionUtil.encrypt(key: "passwordpasswordpasswordpassword", iv: "passwordpassword", target: uid)
         
         if encryptedUid == nil {
             completion(NSError(domain: "domain", code: 114, userInfo: ["info" : "str"]))
